@@ -20,6 +20,10 @@
 #Exit script if any command fails
 set -e
 
+# Paths to programs
+fastqc=/gscratch/srlab/programs/fastqc_v0.11.9/fastqc
+multiqc=/gscratch/srlab/programs/anaconda3/bin/multiqc
+
 #TrimGalore: Remove most abundant sequences and hard trim 10 bp from each end
 /gscratch/srlab/programs/TrimGalore-0.6.6/trim_galore \
 --output_dir /gscratch/scrubbed/yaaminiv/Manchester/analyses/trimgalore \
@@ -53,7 +57,7 @@ set -e
 echo TrimGalore 1 complete
 
 #MultiQC
-/gscratch/srlab/programs/anaconda3/bin/multiqc \
+${multiqc} \
 /gscratch/scrubbed/yaaminiv/Manchester/analyses/trimgalore/.
 
 echo MultiQC 1 complete
@@ -88,7 +92,7 @@ echo MultiQC 1 complete
 echo TrimGalore 2 complete
 
 #MultiQC: Files after second round of adapter trimming
-/gscratch/srlab/programs/anaconda3/bin/multiqc \
+${multiqc} \
 /gscratch/scrubbed/yaaminiv/Manchester/analyses/trimgalore-2/.
 
 echo MultiQC2 complete
@@ -124,7 +128,7 @@ echo MultiQC2 complete
 echo TrimGalore 3 complete
 
 #MultiQC: Files after poly-G tail trimming
-/gscratch/srlab/programs/anaconda3/bin/multiqc \
+${multiqc} \
 /gscratch/scrubbed/yaaminiv/Manchester/analyses/trimgalore-2/poly-G/.
 
 echo MultiQC 3 complete
