@@ -7,3 +7,5 @@ Output from [shell and R Markdown scripts](https://github.com/fish546-2021/yaami
 - [Haws_01-trimgalore](https://github.com/fish546-2021/yaamini-gigas/tree/main/output/Haws_01-trimgalore): FastQC and MultiQC trimming reports from [01-trimgalore.sh](https://github.com/fish546-2021/yaamini-gigas/blob/main/code/Haws/01-trimgalore.sh).
 
 ## Manchester
+
+- [Manchester_01-trimgalore](https://github.com/fish546-2021/yaamini-gigas/tree/main/output/Manchester_01-trimgalore): FastQC and MultiQC trimming reports from [01-trimgalore.sh](https://github.com/fish546-2021/yaamini-gigas/blob/main/code/Manchester/01-trimgalore.sh).
